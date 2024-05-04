@@ -82,10 +82,9 @@ int main(int argc, char **argv){
 
     cout << "\n\n----Calculating mean over 30 test----" << endl;
     cout << fixed << setprecision(1);
-    double totalBS = 0, totalMS = 0; k = n;
+    double totalBS = 0, totalMS = 0; k = 0;
 
     // ORDINATED VECTOR
-    totalBS = 0; totalMS = 0; k = 0;
     generate(v1.begin(), v1.end(), [&k](){return k++;});
     for(size_t i = 0; i < 30; i++){
         testSort(v1, tB, tM);
@@ -98,6 +97,7 @@ int main(int argc, char **argv){
 
 
     // REVERSE VECTOR
+    totalBS = 0; totalMS = 0; k = n;
     generate(v1.begin(), v1.end(), [&k](){return k--;});
     for(size_t i = 0; i < 30; i++){
         testSort(v1, tB, tM);
